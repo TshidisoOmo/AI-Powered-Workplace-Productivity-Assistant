@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WorkSmart AI | Tshidiso Prensence Monyela</title>
+<style>
+:root{--bg:#07111f;--panel:#0d1d30;--panel2:#102640;--line:#23425f;--text:#eef7ff;--muted:#a5b8cb;--cyan:#55d6ff;--purple:#9b87ff;--green:#66e3a8;--amber:#ffd166}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 15% 10%,#0e416055,transparent 32%),radial-gradient(circle at 90% 20%,#5b49db27,transparent 35%),var(--bg);min-height:100vh}
+header{position:sticky;top:0;z-index:10;backdrop-filter:blur(16px);background:#07111fe8;border-bottom:1px solid #ffffff10;padding:15px 5%;display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}.logo{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#06101c;font-weight:900}.tag{font-size:11px;color:var(--green);border:1px solid #66e3a844;padding:6px 9px;border-radius:30px}
+main{max-width:1180px;margin:auto;padding:30px 20px 50px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;margin-bottom:26px}
+.kicker{font-size:11px;letter-spacing:.18em;font-weight:800;color:var(--cyan)}h1{font-size:clamp(38px,6vw,72px);line-height:1.02;letter-spacing:-.05em;margin:8px 0 16px}h1 span{background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;color:transparent}p{color:var(--muted);line-height:1.6}
+.hero-card{background:linear-gradient(145deg,#0d2036,#111a35);border:1px solid #ffffff12;border-radius:22px;padding:22px;box-shadow:0 25px 60px #0006;position:relative;overflow:hidden}
+.hero-card:after{content:"";position:absolute;width:180px;height:180px;background:#55d6ff16;border-radius:50%;right:-70px;top:-70px;filter:blur(10px)}
+.dots{display:flex;gap:7px}.dots i{width:8px;height:8px;border-radius:50%;display:block;background:#fff3}.code{margin-top:18px;background:#050b12;border-radius:14px;padding:18px;font:13px/1.7 ui-monospace,monospace;color:#dbf7ff}.code .c{color:var(--cyan)}.code .p{color:var(--purple)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0}.stat{background:#ffffff06;border:1px solid #ffffff10;border-radius:14px;padding:13px}.stat b{font-size:20px;display:block;color:var(--cyan)}.stat span{font-size:11px;color:var(--muted)}
+.tabs{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0}.tabs button{border:1px solid #ffffff12;background:#ffffff06;color:var(--muted);padding:10px 14px;border-radius:11px;cursor:pointer;font-weight:700}.tabs button.active{background:linear-gradient(135deg,#55d6ff,#8b7cff);color:#07111f;border-color:transparent}
+.panel{background:linear-gradient(160deg,#0d1d30,#0a1828);border:1px solid #ffffff10;border-radius:20px;padding:24px;box-shadow:0 10px 35px #0003}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}label{font-size:12px;font-weight:800;display:block;margin:10px 0 7px;color:#d8e6f4}input,textarea,select{width:100%;background:#06111e;border:1px solid #29445f;color:var(--text);border-radius:10px;padding:12px;font:inherit}textarea{min-height:145px;resize:vertical}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.primary,.secondary{padding:11px 17px;border-radius:10px;border:0;font-weight:800;cursor:pointer}.primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#06101c}.secondary{background:#ffffff0a;border:1px solid #ffffff14;color:var(--text)}
+.output{margin-top:18px;padding:18px;border-radius:13px;background:#050d16;border:1px solid #ffffff0e;white-space:pre-wrap;line-height:1.6;min-height:90px}.ready{color:var(--green);font-size:11px;font-weight:800;letter-spacing:.08em}
+.workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:22px 0}.workflow div{background:#ffffff05;border:1px solid #ffffff0d;padding:13px 8px;border-radius:12px;text-align:center;font-size:11px;font-weight:800}.workflow span{display:block;color:var(--cyan);margin-bottom:3px}.workflow i{color:var(--purple);font-style:normal;display:block;margin-top:4px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}.card{padding:16px;border-radius:16px;background:#ffffff05;border:1px solid #ffffff0d}.card .icon{font-size:24px;color:var(--cyan)}.card h3{margin:8px 0 5px;font-size:15px}.card p{font-size:12px;margin:0}
+.note{font-size:11px;color:#8fa6bb;margin-top:10px}.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.check{padding:12px;border:1px solid #ffffff10;border-radius:12px;background:#ffffff04}.check b{display:block;margin-bottom:3px}
+footer{padding:20px 5%;border-top:1px solid #ffffff0c;color:#72869b;font-size:11px;display:flex;justify-content:space-between}
+@media(max-width:850px){.hero,.grid{grid-template-columns:1fr}.stats,.cards{grid-template-columns:1fr 1fr}.workflow{grid-template-columns:1fr 1fr 1fr}.workflow i{display:none}}
+@media(max-width:560px){.stats,.cards,.check-grid,.workflow{grid-template-columns:1fr}.hero h1{font-size:45px}.tabs button{flex:1}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="logo">TP</div><div>WorkSmart AI<br><span style="font-size:11px;color:var(--muted);font-weight:500">Tshidiso Prensence Monyela</span></div></div><div class="tag">PROTOTYPE • 17 SEP 2026</div></header>
+
+<main>
+<section class="hero">
+  <div><div class="kicker">AI PRODUCTIVITY ASSISTANT</div><h1>Automate routine work.<br><span>Keep people in control.</span></h1><p>WorkSmart AI turns repetitive workplace activities into guided workflows for email, meetings, planning, research and chatbot support.</p></div>
+  <div class="hero-card"><div class="dots"><i></i><i></i><i></i></div><div class="code"><span class="c">workflow</span> = [<span class="p">"email"</span>, <span class="p">"meeting"</span>, <span class="p">"plan"</span>, <span class="p">"research"</span>]<br><br><span class="c">prompt</span> = role + task + context + rules + format<br><br>→ generate → review → use</div></div>
+</section>
+
+<div class="stats"><div class="stat"><b>5</b><span>workplace tools</span></div><div class="stat"><b>1</b><span>assistant interface</span></div><div class="stat"><b>5-step</b><span>prompt framework</span></div><div class="stat"><b>Human</b><span>review built in</span></div></div>
+
+<div class="tabs">
+<button class="active" onclick="show('email',this)">✉ Email</button>
+<button onclick="show('meeting',this)">▤ Meeting</button>
+<button onclick="show('planner',this)">◷ Planner</button>
+<button onclick="show('research',this)">⌕ Research</button>
+<button onclick="show('chat',this)">◉ Chatbot</button>
+<button onclick="show('prompt',this)">✦ Prompt Lab</button>
+<button onclick="show('impact',this)">↗ Impact</button>
+</div>
+
+<section id="email" class="panel">
+<div class="ready">LIVE WORKFLOW</div><h2>Smart Email Generator</h2>
+<div class="grid">
+<div><label>Audience</label><select id="ea"><option>Manager</option><option>Client</option><option>Team</option></select><label>Tone</label><select id="et"><option>Professional</option><option>Friendly</option><option>Persuasive</option></select></div>
+<div><label>Purpose / context</label><textarea id="ec">Request two days of leave to attend an important family event.</textarea></div>
+</div>
+<div class="actions"><button class="primary" onclick="email()">Generate Email</button><button class="secondary" onclick="clearOut('eo')">Clear</button></div>
+<div class="output" id="eo">Ready for your workplace request.</div>
+</section>
+
+<section id="meeting" class="panel" style="display:none">
+<div class="ready">STRUCTURE THE INFORMATION</div><h2>Meeting Notes Summarizer</h2><label>Paste meeting notes</label><textarea id="mn">Marketing meeting: launch campaign on 15 October. Lerato will prepare social media content by 5 October. Thabo will confirm the advertising budget by Friday. Team agreed to use the new customer survey results in the campaign. Next meeting is 10 October.</textarea>
+<div class="actions"><button class="primary" onclick="meeting()">Summarize Notes</button></div>
+<div class="output" id="mo">Summary, decisions, action items and deadlines will appear here.</div>
+</section>
+
+<section id="planner" class="panel" style="display:none">
+<div class="ready">PRIORITISE THE DAY</div><h2>AI Task Planner</h2><label>Tasks</label><textarea id="pt">Finish monthly report (urgent, 2h)
+Reply to client emails (urgent, 1h)
+Prepare team presentation (important, 2h)
+Update project tracker (normal, 45m)
+Research new software (low, 1h)</textarea>
+<div class="actions"><button class="primary" onclick="planner()">Create Daily Plan</button></div>
+<div class="output" id="po">Your prioritised daily plan will appear here.</div>
+</section>
+
+<section id="research" class="panel" style="display:none">
+<div class="ready">TURN INFORMATION INTO INSIGHT</div><h2>AI Research Assistant</h2><label>Topic or article text</label><textarea id="rt">Artificial intelligence can automate repetitive administrative work such as drafting communications, summarizing documents and organizing tasks. However, outputs may contain errors, bias or outdated information. Human review remains important for high-impact decisions and confidential information should be handled carefully.</textarea>
+<div class="actions"><button class="primary" onclick="research()">Analyze Research</button></div>
+<div class="output" id="ro">Key insights and recommendations will appear here.</div>
+</section>
+
+<section id="chat" class="panel" style="display:none">
+<div class="ready">CONVERSATIONAL ENTRY POINT</div><h2>AI Workplace Chatbot</h2><label>Your request</label><input id="cq" value="Help me plan my workday.">
+<div class="actions"><button class="primary" onclick="chat()">Ask WorkSmart</button></div><div class="output" id="co">Hello! I can guide you to email, meeting, planning, research or prompt workflows.</div>
+</section>
+
+<section id="prompt" class="panel" style="display:none">
+<div class="ready">PROMPT ENGINEERING LAB</div><h2>Build a stronger prompt</h2>
+<div class="grid"><div><label>Workflow</label><select id="pw"><option>Email</option><option>Meeting Summary</option><option>Task Planning</option><option>Research</option></select><label>Audience / user</label><input id="pa" value="busy workplace professional"></div><div><label>Goal</label><textarea id="pg">Create a clear, useful first draft that can be checked by a human before use.</textarea></div></div>
+<div class="actions"><button class="primary" onclick="makePrompt()">Generate Structured Prompt</button></div>
+<div class="output" id="pr">Your structured prompt will appear here.</div>
+<div class="workflow"><div><span>01</span>ROLE</div><div><span>02</span>TASK</div><div><span>03</span>CONTEXT</div><div><span>04</span>RULES</div><div><span>05</span>FORMAT</div></div>
+</section>
+
+<section id="impact" class="panel" style="display:none">
+<div class="ready">PRODUCTIVITY VALUE</div><h2>Estimate repetitive time saved</h2>
+<div class="grid"><div><label>Tasks automated per week</label><input type="number" id="iw" value="20" min="1"><label>Minutes per task without assistant</label><input type="number" id="im" value="15" min="1"></div><div><label>Minutes per task with WorkSmart</label><input type="number" id="ia" value="5" min="1"><div class="actions"><button class="primary" onclick="impact()">Calculate Impact</button></div></div></div>
+<div class="output" id="io">Enter your workload and calculate an illustrative time-saving estimate.</div>
+<p class="note">This is a planning estimate, not a measured performance claim. Actual results should be tested using real workplace tasks.</p>
+</section>
+
+<section class="section" style="padding-top:28px">
+<div class="ready">SYSTEM WORKFLOW</div>
+<div class="workflow"><div><span>INPUT</span>Task / notes / text</div><div><span>PROMPT</span>Structured instructions</div><div><span>AI</span>Generate / organise</div><div><span>REVIEW</span>Human validation</div><div><span>OUTPUT</span>Ready-to-use result</div></div>
+<div class="cards">
+<div class="card"><div class="icon">✓</div><h3>Verify</h3><p>Check facts, dates, names and important decisions.</p></div>
+<div class="card"><div class="icon">⌕</div><h3>Protect data</h3><p>Do not enter confidential information into unapproved systems.</p></div>
+<div class="card"><div class="icon">⚖</div><h3>Check bias</h3><p>Review language for unfair or unsupported assumptions.</p></div>
+<div class="card"><div class="icon">◉</div><h3>Keep control</h3><p>People remain responsible for final decisions and outputs.</p></div>
+</div>
+</section>
+</main>
+<footer><span>WorkSmart AI • Tshidiso Prensence Monyela</span><span>Prototype mode • Human review required</span></footer>
+
+<script>
+function show(id,btn){document.querySelectorAll('section[id]').forEach(s=>s.style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
+function clearOut(id){document.getElementById(id).textContent='Ready for your workplace request.'}
+function email(){let a=ea.value,t=et.value,c=ec.value;eo.textContent=`Subject: Workplace Request\n\nDear ${a},\n\nI am writing to request two days of leave. ${c}\n\nI will ensure my responsibilities are covered before my leave and will be available for any necessary handover.\n\nKind regards,\nTshidiso Prensence Monyela\n\n[Tone: ${t}]`}
+function meeting(){mo.textContent=`SUMMARY\nThe team agreed on the campaign launch and assigned preparation tasks.\n\nKEY DECISIONS\n• Campaign launch: 15 October\n• Use customer survey results in the campaign\n• Next meeting: 10 October\n\nACTION ITEMS\n• Lerato — social media content — 5 October\n• Thabo — advertising budget — Friday\n\nVALIDATION CHECK\n☐ Confirm owners\n☐ Confirm dates\n☐ Confirm decisions before circulation`}
+function planner(){po.textContent=`PRIORITY PLAN\n08:00–10:00  Finish monthly report (Urgent)\n10:00–11:00  Reply to client emails (Urgent)\n11:00–13:00  Prepare team presentation (Important)\n14:00–14:45  Update project tracker (Normal)\n15:00–16:00  Research new software (Low)\n\nTIME-OPTIMIZATION\n• Start with urgent, high-focus work.\n• Batch routine emails.\n• Keep a short buffer for unexpected work.`}
+function research(){ro.textContent=`KEY INSIGHTS\n• AI can automate repetitive administrative activities.\n• Common uses include drafting, summarisation and task organisation.\n• Outputs may contain errors, bias or outdated information.\n\nRECOMMENDATIONS\n• Verify important information.\n• Use trusted sources for research claims.\n• Keep human judgement in high-impact decisions.\n\nLIMITATION\nThis prototype analyses supplied text; it does not independently verify every factual claim.`}
+function chat(){let q=cq.value.toLowerCase();let r=q.includes('email')?'Use Smart Email Generator and specify the audience, tone and context.':q.includes('meeting')?'Use Meeting Notes to turn notes into decisions, actions and deadlines.':q.includes('research')?'Use Research Assistant to extract insights, then verify important claims with sources.':q.includes('plan')||q.includes('task')?'Use Task Planner to prioritise work and time-block your day.':q.includes('prompt')?'Use Prompt Lab to build a structured role-task-context-rules-format prompt.':'I can guide you through email, meeting, planning, research and prompt workflows.';co.textContent=r}
+function makePrompt(){let w=pw.value,a=pa.value,g=pg.value;pr.textContent=`ROLE\nYou are an AI workplace assistant supporting a ${a}.\n\nTASK\nHelp with: ${w}.\n\nCONTEXT\n${g}\n\nRULES\nBe clear, professional and concise. Do not invent missing facts. Flag information that needs verification.\n\nOUTPUT FORMAT\nReturn a structured, ready-to-review result with headings where useful.`}
+function impact(){let w=+iw.value,m=+im.value,a=+ia.value;let saved=(m-a)*w;let oldt=m*w;let newt=a*w;io.textContent=`ILLUSTRATIVE WEEKLY IMPACT\nWithout assistant: ${oldt} minutes (${(oldt/60).toFixed(1)} hours)\nWith WorkSmart: ${newt} minutes (${(newt/60).toFixed(1)} hours)\nEstimated time difference: ${saved} minutes (${(saved/60).toFixed(1)} hours)\n\nUse this as a starting estimate. Measure actual tasks before making productivity claims.`}
+</script>
+</body>
+</html>
